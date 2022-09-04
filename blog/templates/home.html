@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> QuillPost </h1>
+
+<ul>
+{% for blogPost in object_list %}
+    <li><a href = "{%url 'article-detail' blogPost.pk %}"> {{blogPost.title}} </a>  - {{blogPost.authors.first_name}} {{blogPost.authors.last_name}} 
+        <small><a href="{%url 'update' blogPost.pk %}">(edit?)</a></small><small><a href="{%url 'delete' blogPost.pk %}">(delete?)</a></small><br/> 
+        {{blogPost.content.html|safe}}</li>
+{% endfor %}
+</ul>
+{% endblock %}

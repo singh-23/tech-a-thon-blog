@@ -1,0 +1,8 @@
+<h1> QuillPost </h1>
+
+<ul>
+{% for blogPost in object_list %}
+    <li>{{blogPost.title}} - {{blogPost.author}}<br/> 
+        {{blogPost.body}}</li>
+{% endfor %}
+</ul>

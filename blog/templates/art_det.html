@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} {{object.titletag}} {% endblock %}
+
+{% block content %}
+
+<h1> {{object.title}}</h1>
+<h5> By: - {{ object.authors.first_name }}</h5>
+<hr>
+<br/>
+{{object.content.html|safe}}
+
+<br/> <br/>
+<a href="{% url 'home' %}" class="btn btn-secondary"> Back </a>
+{% endblock %}
